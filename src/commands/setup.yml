@@ -1,0 +1,22 @@
+description: >
+  Set up the CI environment
+
+parameters:
+  project-location:
+    description: Location of the react project. Defaults to .
+    type: string
+    default: "."
+
+steps:
+- restore_cache:
+    key: v0-{{ .Branch }}-{{ checksum "<< parameters.project-location >>/yarn.lock" }}
+- run:
+    name: Install dependencies
+    command: |
+      cd << parameters.project-location >>
+      yarn install --frozen-lockfile
+- save_cache:
+    key: v0-{{ .Branch }}-{{ checksum "<< parameters.project-location >>/yarn.lock" }}
+    paths:
+    - "<< parameters.project-location >>/node_modules"
+    - "~/.cache/yarn"

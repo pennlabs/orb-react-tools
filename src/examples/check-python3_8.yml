@@ -1,0 +1,14 @@
+description: >
+  Check a React project using a different version of node
+
+usage:
+  version: 2.1
+
+  orbs:
+    react: pennlabs/react-tools@x.y.z
+
+  workflows:
+    build-and-deploy:
+      jobs:
+        - react/check:
+            node-version: "3.8"

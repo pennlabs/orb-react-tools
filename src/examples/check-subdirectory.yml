@@ -1,0 +1,14 @@
+description: >
+  Check a React project that exists in a subdirectory
+
+usage:
+  version: 2.1
+
+  orbs:
+    react: pennlabs/react-tools@x.y.z
+
+  workflows:
+    build-and-deploy:
+      jobs:
+        - react/check:
+            project-location: frontend

@@ -1,0 +1,27 @@
+description: >
+  Check a react against Penn Labs' standards
+
+parameters:
+  project-location:
+    description: Location of the react project. Defaults to .
+    type: string
+    default: "."
+
+  node-version:
+    description: Node version to use. Defaults to 10
+    type: string
+    default: "10"
+
+docker:
+  - image: circleci/node:<< parameters.node-version >>
+
+steps:
+  - checkout
+  - setup:
+      project-location: << parameters.project-location >>
+  - lint:
+      project-location: << parameters.project-location >>
+  - test:
+      project-location: << parameters.project-location >>
+  - upload-artifacts:
+      project-location: << parameters.project-location >>

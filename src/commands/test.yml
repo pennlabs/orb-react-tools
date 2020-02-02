@@ -1,0 +1,15 @@
+description: >
+  Test the react project
+
+parameters:
+  project-location:
+    description: Location of the react project. Defaults to .
+    type: string
+    default: "."
+
+steps:
+- run:
+    name: Run tests
+    command: |
+      cd << parameters.project-location >>
+      yarn test

@@ -1,0 +1,15 @@
+description: >
+  Lint using yarn
+
+parameters:
+  project-location:
+    description: Location of the react project. Defaults to .
+    type: string
+    default: "."
+
+steps:
+  - run:
+      name: Lint
+      command: |
+        cd << parameters.project-location >>
+        yarn lint

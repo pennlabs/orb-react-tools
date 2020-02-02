@@ -1,0 +1,13 @@
+description: >
+  Check a React project in the root directory
+
+usage:
+  version: 2.1
+
+  orbs:
+    react: pennlabs/react-tools@x.y.z
+
+  workflows:
+    build-and-deploy:
+      jobs:
+        - react/check

@@ -11,4 +11,4 @@ usage:
     build-and-deploy:
       jobs:
         - react/check:
-            node-version: "3.8"
+            node-version: "13"

@@ -7,13 +7,13 @@ parameters:
     type: string
     default: "."
 
-  node-version:
-    description: Node version to use. Defaults to 10
+  image:
+    description: Docker image to use. Defaults to circleci/node:10
     type: string
-    default: "10"
+    default: "circleci/node:10"
 
 docker:
-  - image: circleci/node:<< parameters.node-version >>
+  - image: << parameters.image >>
 
 steps:
   - checkout

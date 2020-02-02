@@ -11,4 +11,4 @@ usage:
     build-and-deploy:
       jobs:
         - react/check:
-            node-version: "13"
+            image: "circleci/node:13"

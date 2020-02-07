@@ -9,7 +9,7 @@ parameters:
 
 steps:
 - store_test_results:
-    path: << parameters.project-location >>/test-results
+    path: << parameters.project-location >>/coverage
 - store_artifacts:
-    path: << parameters.project-location >>/test-results
+    path: << parameters.project-location >>/coverage
     destination: trl

@@ -23,5 +23,7 @@ steps:
       project-location: << parameters.project-location >>
   - test:
       project-location: << parameters.project-location >>
+  - code-coverage:
+      project-location: << parameters.project-location >>
   - upload-artifacts:
       project-location: << parameters.project-location >>

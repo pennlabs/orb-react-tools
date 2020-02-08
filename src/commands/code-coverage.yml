@@ -11,5 +11,6 @@ steps:
 - run:
     name: Upload code coverage
     command: |
+      ROOT=$(pwd)
       cd << parameters.project-location >>
-      yarn run codecov
+      yarn run codecov -p $ROOT -F frontend

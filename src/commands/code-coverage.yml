@@ -13,4 +13,4 @@ steps:
     command: |
       ROOT=$(pwd)
       cd << parameters.project-location >>
-      yarn run codecov --root $ROOT
+      yarn run codecov -p $ROOT -F frontend
